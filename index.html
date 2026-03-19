@@ -1,36 +1,275 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Er Song Kai | Portfolio</title>
+  <title>Er Song Kai</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Er Song Kai</h1>
-    <p>Cybersecurity | Software Engineering | Projects</p>
-  </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>xxx</p>
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">ESK</span>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#leadership" class="nav-link">Leadership</a></li>
+        <li><a href="#awards" class="nav-link">Awards</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle dark mode" id="theme-toggle">
+        <svg class="icon-sun" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 class="hero-name">Er Song Kai</h1>
+      <p class="hero-tagline">Empowering people through technology</p>
+      <a href="#about" class="hero-scroll-cta" aria-label="Scroll to about">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
   </section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>Phishless</li>
-      <li>CTF Writeups</li>
-      <li>Other portfolio projects</li>
-    </ul>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-inner">
+      <span class="section-label">About</span>
+      <h2 class="section-title">Who I Am</h2>
+      <p class="section-body" style="text-align: justify;">
+        I believe technology has the power to protect and connect people, and that belief has shaped everything I've pursued in tech. I was drawn to cybersecurity first, through years of Capture-the-Flag (CTF) competitions, earning multiple certifications and building digitally inclusive and secure tools. As a computer science undergraduate at National University of Singapore (NUS), I find myself thinking less about breaking systems and more about building ones worth trusting. Security isn't something I'm moving away from, it's the foundation I built for everything I stand for now.
+      </p>
+    </div>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: ersongkai@gmail.com</p>
-    <p>GitHub: github.com/b0o5t3d</p>
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <div class="section-inner">
+      <span class="section-label">Education</span>
+      <h2 class="section-title">Where I Studied</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Aug 2025 – Present</span>
+          </div>
+          <div class="timeline-card">
+            <h3 class="timeline-org">National University of Singapore</h3>
+            <p class="timeline-role">Bachelor of Computing in Computer Science (with Honours)</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Mar 2020 – May 2023</span>
+          </div>
+          <div class="timeline-card">
+            <h3 class="timeline-org">Singapore Polytechnic</h3>
+            <p class="timeline-role">Diploma in Infocomm Security Management (with Merit)</p>
+            <p class="timeline-detail">GPA 3.89 · Distinctions in 6 modules</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="section-inner">
+      <span class="section-label">Experience</span>
+      <h2 class="section-title">What I've Done</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Sep 2022 – Feb 2023</span>
+          </div>
+          <div class="timeline-card">
+            <h3 class="timeline-org">Defence Science & Technology Agency</h3>
+            <p class="timeline-role">Cybersecurity Intern</p>
+            <ul class="timeline-bullets">
+              <li>Developed an automated vulnerability detection programme for Infrastructure-as-Code files.</li>
+              <li>Designed PowerShell scripts to deploy AWS instances and web app environments for vulnerability testing.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Jun 2023 – Aug 2023</span>
+          </div>
+          <div class="timeline-card">
+            <h3 class="timeline-org">DSO National Laboratories</h3>
+            <p class="timeline-role">Technical Staff</p>
+            <ul class="timeline-bullets">
+              <li>Managed sustainment of a fleet of high security workstations.</li>
+              <li>Ran benchmarks to ensure highly performant compute for the organisation.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Mar 2024 – Jun 2024</span>
+          </div>
+          <div class="timeline-card">
+            <h3 class="timeline-org">Republic of Singapore Air Force</h3>
+            <p class="timeline-role">Pilot (Trainee)</p>
+            <ul class="timeline-bullets">
+              <li>Deployed to Australia for Pilot Training on the CT-4B plane platform.</li>
+              <li>Underwent leadership training and familiarised with air power capabilities and defence policy.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <span class="section-label">Projects</span>
+      <h2 class="section-title">What I've Built</h2>
+      <div class="card-grid">
+        <div class="project-card reveal">
+          <h3 class="card-title">Phishless</h3>
+          <p class="card-desc">A final-year project co-developed at Singapore Polytechnic to educate users on identifying and mitigating phishing and related cyber threats.</p>
+          <div class="card-tags">
+            <span class="tag">Security</span>
+            <span class="tag">Python</span>
+            <span class="tag">Team Project</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <h3 class="card-title">CTF Writeups</h3>
+          <p class="card-desc">Solutions and write-ups from 30+ competitive CTF events worldwide, covering web exploitation, binary analysis, cryptography, and more.</p>
+          <div class="card-tags">
+            <span class="tag">CTF</span>
+            <span class="tag">Writeups</span>
+            <span class="tag">Security Research</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership" class="section">
+    <div class="section-inner">
+      <span class="section-label">Leadership</span>
+      <h2 class="section-title">How I Lead</h2>
+      <div class="card-grid">
+        <div class="leadership-card reveal">
+          <h3 class="card-title">Obelus</h3>
+          <p class="card-role">Vice Captain · Apr 2020 – Present</p>
+          <p class="card-desc">Tech Competition Team. Recruited and grew the team to 10+ members. Competed in 30+ events worldwide with SGD 11,000+ in winnings.</p>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-value">30+</span><span class="stat-label">Events</span></div>
+            <div class="stat"><span class="stat-value">$11k+</span><span class="stat-label">Winnings</span></div>
+            <div class="stat"><span class="stat-value">10+</span><span class="stat-label">Members</span></div>
+          </div>
+        </div>
+        <div class="leadership-card reveal">
+          <h3 class="card-title">SP School of Computing Club</h3>
+          <p class="card-role">President · Sep 2021 – May 2022</p>
+          <p class="card-desc">Organised meaningful events for the School of Computing student body and directed the Executive Committee from ideation to post-event wrap-up.</p>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-value">1,000+</span><span class="stat-label">Students</span></div>
+          </div>
+        </div>
+        <div class="leadership-card reveal">
+          <h3 class="card-title">SP Students' Union</h3>
+          <p class="card-role">Council Member · Apr 2021 – May 2022</p>
+          <p class="card-desc">Oversaw and organised social, cultural, educational, and sports activities across the entire student body.</p>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-value">16,000+</span><span class="stat-label">Students</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards" class="section">
+    <div class="section-inner">
+      <span class="section-label">Awards & Certifications</span>
+      <h2 class="section-title">Recognition</h2>
+      <div class="awards-grid">
+        <div class="awards-col reveal">
+          <h3 class="awards-col-title">Honours & Awards</h3>
+          <ul class="awards-list">
+            <li class="award-item">
+              <span class="award-name">Cyber Defenders Discovery Camp</span>
+              <span class="award-detail">1st Runner-up · Jun 2022</span>
+            </li>
+            <li class="award-item">
+              <span class="award-name">UMass CTF 2022</span>
+              <span class="award-detail">8th place out of 300+ teams · Mar 2022</span>
+            </li>
+            <li class="award-item">
+              <span class="award-name">Lag'n'Crash CTF 2022</span>
+              <span class="award-detail">1st Runner-up · Mar 2022</span>
+            </li>
+            <li class="award-item">
+              <span class="award-name">DSTA Polytechnic Digital Scholarship</span>
+              <span class="award-detail">Sep 2021 – May 2023</span>
+            </li>
+            <li class="award-item">
+              <span class="award-name">AiSP SVRP Award Gold</span>
+              <span class="award-detail">Sep 2022</span>
+            </li>
+          </ul>
+        </div>
+        <div class="awards-col reveal">
+          <h3 class="awards-col-title">Certifications</h3>
+          <ul class="awards-list">
+            <li class="award-item">
+              <span class="award-name">Offensive Security Certified Professional</span>
+              <span class="award-detail">Jun 2023</span>
+            </li>
+            <li class="award-item">
+              <span class="award-name">eLS Web Application Penetration Tester</span>
+              <span class="award-detail">Jun 2022</span>
+            </li>
+            <li class="award-item">
+              <span class="award-name">eLS Junior Penetration Tester</span>
+              <span class="award-detail">Oct 2021</span>
+            </li>
+            <li class="award-item">
+              <span class="award-name">Organisational Security System Analyst</span>
+              <span class="award-detail">Oct 2021</span>
+            </li>
+            <li class="award-item">
+              <span class="award-name">AWS Certified Cloud Practitioner</span>
+              <span class="award-detail">Sep 2021</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-inner contact-inner">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">Let's Talk</h2>
+      <p class="section-body">Open to internships, collaborations, and interesting conversations.</p>
+      <div class="contact-links">
+        <a href="mailto:ersongkai@gmail.com" class="contact-link">ersongkai@gmail.com</a>
+        <a href="https://linkedin.com/in/ersongkai" class="contact-link" target="_blank" rel="noopener" aria-label="LinkedIn (opens in new tab)">LinkedIn</a>
+        <a href="https://github.com/b0o5t3d" class="contact-link" target="_blank" rel="noopener" aria-label="GitHub (opens in new tab)">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Er Song Kai</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
