@@ -101,6 +101,11 @@ ul {
   color: var(--text-primary);
   letter-spacing: 0.05em;
   margin-right: auto;
+  text-decoration: none;
+}
+
+.nav-logo:hover {
+  text-decoration: none;
 }
 
 .nav-links {
