@@ -898,10 +898,13 @@ footer {
 }
 
 @media (max-width: 768px) {
-  #modal-overlay { padding: 16px 16px 38px; align-items: flex-end; }
+  #modal-overlay {
+    padding: 16px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+    align-items: flex-end;
+  }
   #modal-box {
     flex-direction: column;
-    height: 90vh;
+    height: min(90vh, calc(100dvh - 32px - env(safe-area-inset-bottom, 0px)));
     border-radius: 20px;
   }
   #modal-img {
