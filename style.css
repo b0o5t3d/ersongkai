@@ -898,7 +898,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  #modal-overlay { padding: 16px; align-items: flex-end; }
+  #modal-overlay { padding: 16px 16px 38px; align-items: flex-end; }
   #modal-box {
     flex-direction: column;
     height: 90vh;
