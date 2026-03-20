@@ -913,4 +913,5 @@ footer {
     background-repeat: no-repeat;
   }
   #modal-content { padding: 28px 24px; }
+  #modal-close { color: #ffffff; background: rgba(0, 0, 0, 0.3); }
 }
