@@ -209,7 +209,7 @@ ul {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('images/hero-bg.jpg');
+  background-image: url('images/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-color: var(--img-fallback-bg);
@@ -755,6 +755,7 @@ footer {
   .card-stats { gap: 16px; }
   .contact-links { flex-direction: column; align-items: center; }
   .nav-inner { padding: 0 16px; }
+
 }
 
 @media (max-width: 480px) {
@@ -894,4 +895,22 @@ footer {
 
 #modal-close:hover {
   background: rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  #modal-overlay { padding: 16px; align-items: flex-end; }
+  #modal-box {
+    flex-direction: column;
+    height: 90vh;
+    border-radius: 20px;
+  }
+  #modal-img {
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #modal-content { padding: 28px 24px; }
 }
