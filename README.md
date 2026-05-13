@@ -4,7 +4,7 @@ Personal portfolio website built with pure HTML, CSS, and vanilla JavaScript. Ho
 
 ## Tech Stack
 
-- HTML5, CSS3, Vanilla JavaScript — no frameworks, no build tools
+- HTML5, CSS3, JavaScript (no frameworks or build tools)
 - GitHub Pages for static hosting
 
 ## Features
