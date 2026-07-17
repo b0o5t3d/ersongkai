@@ -27,6 +27,26 @@ initTheme();
 
 // === NAV: FROSTED GLASS ON SCROLL ===
 const nav = document.getElementById('main-nav');
+const navMenuToggle = document.getElementById('nav-menu-toggle');
+const navMenu = document.getElementById('nav-links');
+
+function closeNavMenu() {
+  navMenu.classList.remove('is-open');
+  navMenuToggle.setAttribute('aria-expanded', 'false');
+  navMenuToggle.setAttribute('aria-label', 'Open navigation menu');
+}
+
+navMenuToggle.addEventListener('click', () => {
+  const isOpen = navMenu.classList.toggle('is-open');
+  navMenuToggle.setAttribute('aria-expanded', String(isOpen));
+  navMenuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+});
+
+navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNavMenu));
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 680) closeNavMenu();
+});
 
 // === NAV: ACTIVE LINK ON SCROLL ===
 const sections = document.querySelectorAll('.section');
@@ -85,8 +105,27 @@ const modalRole     = document.getElementById('modal-role');
 const modalDesc     = document.getElementById('modal-desc');
 const modalLinks    = document.getElementById('modal-links');
 const modalContent  = document.getElementById('modal-content');
+let previousFocus = null;
+
+function trapFocus(event, container) {
+  const focusable = Array.from(container.querySelectorAll(
+    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  )).filter(element => !element.hasAttribute('hidden'));
+  if (!focusable.length) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
 
 function openModal(card) {
+  previousFocus = document.activeElement;
   const title   = card.dataset.title   || '';
   const role    = card.dataset.role    || '';
   const img     = card.dataset.img     || '';
@@ -156,6 +195,7 @@ function openModal(card) {
   // Show modal
   modalOverlay.setAttribute('aria-hidden', 'false');
   modalOverlay.classList.add('is-open');
+  modalClose.focus();
 }
 
 function closeModal() {
@@ -166,13 +206,23 @@ function closeModal() {
       document.body.style.paddingRight = '';
       nav.style.paddingRight = '';
       modalOverlay.setAttribute('aria-hidden', 'true');
+      if (previousFocus) previousFocus.focus();
     }
   }, { once: true });
 }
 
 // Card click listeners
 document.querySelectorAll('.project-card, .leadership-card').forEach(card => {
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('role', 'button');
+  card.setAttribute('aria-label', `View details for ${card.dataset.title || 'item'}`);
   card.addEventListener('click', (e) => openModal(e.currentTarget));
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openModal(e.currentTarget);
+    }
+  });
 });
 
 // Close on backdrop click
@@ -183,11 +233,18 @@ modalOverlay.addEventListener('click', (e) => {
 // Close button
 modalClose.addEventListener('click', closeModal);
 
-// Close on Escape key
+// Close on Escape and trap focus inside open dialogs
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
+    if (navMenu.classList.contains('is-open')) closeNavMenu();
     if (modalOverlay.classList.contains('is-open')) closeModal();
     if (certOverlay.classList.contains('is-open')) closeCert();
+  }
+  if (e.key === 'Tab' && modalOverlay.classList.contains('is-open')) {
+    trapFocus(e, modalOverlay);
+  }
+  if (e.key === 'Tab' && certOverlay.classList.contains('is-open')) {
+    trapFocus(e, certOverlay);
   }
 });
 
@@ -197,6 +254,7 @@ const certImg     = document.getElementById('cert-img');
 const certClose   = document.getElementById('cert-close');
 
 function openCert(src) {
+  previousFocus = document.activeElement;
   const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
   certImg.src = src;
   certImg.alt = 'Certificate';
@@ -205,6 +263,7 @@ function openCert(src) {
   document.body.style.overflow = 'hidden';
   document.body.style.paddingRight = `${scrollbarWidth}px`;
   nav.style.paddingRight = `${scrollbarWidth}px`;
+  certClose.focus();
 }
 
 function closeCert() {
@@ -216,6 +275,7 @@ function closeCert() {
       nav.style.paddingRight = '';
       certOverlay.setAttribute('aria-hidden', 'true');
       certImg.src = '';
+      if (previousFocus) previousFocus.focus();
     }
   }, { once: true });
 }

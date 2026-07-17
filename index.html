@@ -12,7 +12,7 @@
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">ESK</a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
@@ -21,6 +21,9 @@
         <li><a href="#awards" class="nav-link">Awards</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+      <button class="nav-menu-toggle" id="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
       <button class="theme-toggle" aria-label="Toggle dark mode" id="theme-toggle">
         <svg class="icon-sun" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <svg class="icon-moon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -34,6 +37,10 @@
     <div class="hero-content">
       <h1 class="hero-name">Er Song Kai</h1>
       <p class="hero-tagline">Empowering people through technology</p>
+      <div class="hero-actions">
+        <a href="#projects" class="hero-action hero-action-primary">View Projects</a>
+        <a href="#contact" class="hero-action hero-action-secondary">Contact Me</a>
+      </div>
       <a href="#about" class="hero-scroll-cta" aria-label="Scroll to about">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </a>
@@ -45,8 +52,8 @@
     <div class="section-inner">
       <span class="section-label">About</span>
       <h2 class="section-title">Who I Am</h2>
-      <p class="section-body" style="text-align: justify;">
-        I believe technology has the power to protect and connect people, and that belief has shaped everything I've pursued in tech. I was drawn to cybersecurity first, through years of Capture-the-Flag (CTF) competitions, earning multiple certifications and building digitally inclusive and secure tools. As a computer science undergraduate at National University of Singapore (NUS), I find myself thinking less about breaking systems and more about building ones worth trusting. Security isn't something I'm moving away from, it's the foundation I built for everything I stand for now.
+      <p class="section-body">
+        I am a computer science student focused on full-stack product engineering and security-conscious systems. I have built software for student productivity, automated cloud-security testing, and supported the deployment of high-security workstation fleets. My cybersecurity background shapes how I design and test systems, while my current work focuses on building products that are useful, reliable, and easy to operate. I will join Columbia University as a transfer student in Fall 2026.
       </p>
     </div>
   </section>
@@ -59,7 +66,17 @@
       <div class="timeline">
         <div class="timeline-item reveal">
           <div class="timeline-meta">
-            <span class="timeline-date">Aug 2025 – Present</span>
+            <span class="timeline-date">Fall 2026</span>
+          </div>
+          <div class="timeline-card">
+            <h3 class="timeline-org">Columbia University</h3>
+            <p class="timeline-role">BA in Computer Science</p>
+            <p class="timeline-detail">Incoming transfer student, Fall 2026</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Aug 2025 – Aug 2026</span>
           </div>
           <div class="timeline-card">
             <h3 class="timeline-org">National University of Singapore</h3>
@@ -80,6 +97,28 @@
     </div>
   </section>
 
+  <!-- CAPABILITIES -->
+  <section id="capabilities" class="section">
+    <div class="section-inner">
+      <span class="section-label">Capabilities</span>
+      <h2 class="section-title">What I Work With</h2>
+      <div class="capabilities-grid">
+        <article class="capability-card reveal">
+          <h3>Product Engineering</h3>
+          <p>TypeScript, React, Next.js, Express, PostgreSQL</p>
+        </article>
+        <article class="capability-card reveal">
+          <h3>Automation &amp; Infrastructure</h3>
+          <p>Python, PowerShell, AWS, Terraform, Docker, CI/CD</p>
+        </article>
+        <article class="capability-card reveal">
+          <h3>Security Engineering</h3>
+          <p>Web security, MITRE ATT&amp;CK, vulnerability testing, Ghidra, IDA</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section id="experience" class="section">
     <div class="section-inner">
@@ -94,8 +133,9 @@
             <h3 class="timeline-org">Defence Science & Technology Agency</h3>
             <p class="timeline-role">Cybersecurity Intern</p>
             <ul class="timeline-bullets">
-              <li>Developed an automated vulnerability detection programme for Infrastructure-as-Code files.</li>
-              <li>Designed PowerShell scripts to deploy AWS instances and web app environments for vulnerability testing.</li>
+              <li>Built automated checks for insecure Infrastructure-as-Code configurations and scripts.</li>
+              <li>Mapped findings to MITRE ATT&amp;CK to support faster technical triage.</li>
+              <li>Automated AWS test-environment provisioning and reduced validation runtime by up to 65%.</li>
             </ul>
           </div>
         </div>
@@ -107,8 +147,9 @@
             <h3 class="timeline-org">DSO National Laboratories</h3>
             <p class="timeline-role">Technical Staff</p>
             <ul class="timeline-bullets">
-              <li>Managed sustainment of a fleet of high security workstations.</li>
-              <li>Ran benchmarks to ensure highly performant compute for the organisation.</li>
+              <li>Provisioned and hardened approximately 1,200 high-security Windows workstations.</li>
+              <li>Automated post-imaging validation to improve deployment traceability and handover quality.</li>
+              <li>Built a benchmarking tool to identify performance outliers before deployment.</li>
             </ul>
           </div>
         </div>
@@ -161,7 +202,7 @@
           data-desc-full="A minimal study app for fixed Basic Theory Test (BTT) and Final Theory Test (FTT) practice papers. The app lets learners choose a paper, answer questions one by one, jump between questions, flag questions for review, time a practice session, check individual answers while studying, submit an attempt, and review their score.\n\nThe project supports 16 practice papers across BTT and FTT, with 50 scored questions per paper. It renders the original image-based PDF question pages in the browser and pairs them with native A/B/C answer controls for automatic scoring.\n\nProgress is saved locally in the browser, so refreshing during an attempt does not clear selected answers. Submitted results can also be reopened in a read-only review view with the learner's answer and the correct answer shown together."
           data-link1-label="Live Site"
           data-link1-url="https://b0o5t3d.github.io/Driving-Theory-Test-App/">
-          <div class="card-img" style="background-image: url('images/driving-logo.png'); background-size: contain; background-repeat: no-repeat;" aria-hidden="true"></div>
+          <div class="card-img" style="background-image: url('images/driving-logo.webp'); background-size: contain; background-repeat: no-repeat;" aria-hidden="true"></div>
           <div class="card-body">
             <h3 class="card-title">Driving Theory Test App</h3>
             <p class="card-desc">A study app for fixed BTT and FTT practice papers with local progress saving, timed attempts, answer checking, and score review.</p>
@@ -226,17 +267,17 @@
       <div class="card-grid">
         <div class="leadership-card reveal"
           data-title="Obelus"
-          data-role="Vice Captain · Apr 2020 – Present"
+          data-role="Captain · Apr 2020 – Present"
           data-img="images/leadership-obelus.jpg"
           data-tags="Leadership,CTF,Competition"
-          data-desc-full="Obelus is a tech competition team I helped build from the ground up. As Vice Captain, I recruited and developed a team of 10+ self-taught members who have competed in 30+ events worldwide, earning over SGD 11,000 in winnings.\n\nLeading Obelus sharpened my ability to bring people with different skill levels together under a shared goal. Managing both the technical preparation and the human dynamics of competitive teamwork was as challenging as the competitions themselves.\n\nObelus continues to compete globally and remains one of the most formative experiences of my technical career."
+          data-desc-full="Obelus is a tech competition team I helped build from the ground up. As Captain, I recruited and developed a team of 10+ self-taught members who have competed in 30+ events worldwide, earning over SGD 11,000 in winnings.\n\nLeading Obelus sharpened my ability to bring people with different skill levels together under a shared goal. Managing both the technical preparation and the human dynamics of competitive teamwork was as challenging as the competitions themselves.\n\nObelus continues to compete globally and remains one of the most formative experiences of my technical career."
           data-img-fit="contain"
           data-link1-label="CTFtime"
           data-link1-url="https://ctftime.org/team/150028">
           <div class="card-img" style="background-image: url('images/leadership-obelus.png')" aria-hidden="true"></div>
           <div class="card-body">
             <h3 class="card-title">Obelus</h3>
-            <p class="card-role">Vice Captain · Apr 2020 – Present</p>
+            <p class="card-role">Captain · Apr 2020 – Present</p>
             <p class="card-desc">Tech Competition Team. Recruited and grew the team to 10+ members. Competed in 30+ events worldwide with SGD 11,000+ in winnings.</p>
             <div class="card-stats">
               <div class="stat"><span class="stat-value">30+</span><span class="stat-label">Events</span></div>
