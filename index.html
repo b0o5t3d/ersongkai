@@ -177,6 +177,23 @@
       <h2 class="section-title">What I've Built</h2>
       <div class="card-grid">
         <div class="project-card reveal"
+          data-title="TAR"
+          data-img="images/tar-logo.svg"
+          data-img-fit="contain"
+          data-tags="Python,React,Docker"
+          data-desc-full="Built as a team hackathon project, TAR is an AI-defense layer for web applications. It evaluates suspicious sessions for agentic behavior, infers likely attacker intent, and redirects predicted attack paths into decoy resources while benign requests continue to the real application.\n\nThe system combines a Python deception router, an intentionally vulnerable FastAPI test application, isolated attacker harnesses, and a React operator dashboard. The dashboard records attack paths, indicators of compromise, captured evidence, and attacker time spent inside decoys.\n\nWe tested the system by running controlled attacker agents against protected and unprotected versions of the same target, keeping each attacker in an isolated Docker network.">
+          <div class="card-img" style="background-color: #111827; background-image: url('images/tar-logo.svg'); background-size: 104px; background-repeat: no-repeat; background-position: center;" aria-hidden="true"></div>
+          <div class="card-body">
+            <h3 class="card-title">TAR</h3>
+            <p class="card-desc">An AI-defense layer that detects agentic attackers and redirects predicted attack paths into decoy resources.</p>
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">React</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal"
           data-title="NUSQuest"
           data-img="images/nusquest-hero.webp"
           data-tags="Next.js,Express,PostgreSQL"
